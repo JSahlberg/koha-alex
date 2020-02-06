@@ -1,8 +1,6 @@
 #!/usr/bin/perl -w
 
-#test
-# Search string example:
-# ./alex-test.pl password=zryyn05wNN writer=Guillou,%20Jan title= librarycard=900559914987A
+# ver 0.1b
 
 use Modern::Perl;
 use CGI qw ( -utf8 );
@@ -16,18 +14,17 @@ use warnings;
 
 my $query = CGI->new();
 
-# Fetch some information using the client API
-#my $analyze = $query->param('analyze');
 
 #my $password = $query->param('password');
-my $password = 'zryyn05wNN';
+my $password = 'XXXXXXXXX'; #add key
 
 my $writer = $query->param('writer');
+
 #my $title = $query->param('title');
 my $title = '';
 
 #$librarycard = $query->param('librarycard');
-my $librarycard = '90055991498A7';
+my $librarycard = 'XXXXXXXXXXXX'; #add librarycard
 
 my $ua = new LWP::UserAgent;
 $ua->agent("Perl API Client/1.0");
@@ -39,7 +36,6 @@ my $protocol="https";
 
 #build the url
 my $url = "$protocol://$host/$string/" .  "?Password=$password&Writer=$writer&Title=%title&LibraryCard=%librarycard";
-#my $url = "https://www.alex.se/partnerintegration/Writer/?Password=zryyn05wNN&Writer=Guillou,%20Jan&Title=&LibraryCard=900559914987A";
 
 #Fetch the actual data from the query
 my $request = HTTP::Request->new("GET" => $url);
