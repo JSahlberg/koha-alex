@@ -2,10 +2,10 @@
 
   function getAlex(writer, title) {
 
-    var alexpw = 'zryyn05wNN';
+    var alexpw = '**********'; // Password
     var alexWriter = writer;
     var alexTitle = title;
-    var cardnumber = '90055991498A7';
+    var cardnumber = '**********';  // Cardnumber
 
     $.ajaxSetup({
       error: function(xhr, status, error) {
